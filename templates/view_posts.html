@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+    <h2>Blog Posts</h2>
+    {% if posts %}
+        <div>
+        {% for post in posts %}
+            <div class="post-preview" onclick="window.location.href='{{ url_for('view_post', post_id=post.id) }}';">
+                <h3>{{ post.title }}</h3>
+                <p><strong>Date:</strong> {{ post.date }}</p>
+                <div>{{ post.preview|safe }}</div>  <!-- Render Markdown as HTML -->
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>No posts yet.</p>
+    {% endif %}
+{% endblock %}

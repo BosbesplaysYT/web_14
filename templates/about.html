@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Over Mij{% endblock %}
+
+{% block content %}
+<div class="about-me-container">
+    <section class="hero-section">
+        <h1 class="main-heading">Hallo! Ik ben [Uw Naam]</h1>
+        <p class="sub-heading">[Korte professionele titel of slogan]</p>
+        <div class="profile-pic">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profielfoto" class="profile-img">
+        </div>
+    </section>
+
+    <section class="bio-section">
+        <h2>Mijn Verhaal</h2>
+        <p class="bio-description">
+            Welkom! Ik ben [Uw Naam], een [beroep] met een passie voor [interesses, vaardigheden of hobby's]. 
+            Ik houd ervan om te werken aan [specifiek werkgebied of interesses] en geniet van [wat uw werk uniek of spannend maakt]. 
+            Ik zit al [X jaren] in dit vak, en het is een geweldige reis vol leren en groei.
+        </p>
+    </section>
+
+    <section class="skills-section">
+        <h2>Vaardigheden & Expertise</h2>
+        <ul class="skills-list">
+            <li>Vaardigheid 1: Korte beschrijving</li>
+            <li>Vaardigheid 2: Korte beschrijving</li>
+            <li>Vaardigheid 3: Korte beschrijving</li>
+            <li>Vaardigheid 4: Korte beschrijving</li>
+        </ul>
+    </section>
+
+    <section class="contact-section">
+        <h2>Neem Contact Met Mij Op</h2>
+        <p>Als u contact wilt opnemen, voel u dan vrij om <a href="{{ url_for('contact') }}">mij een bericht te sturen</a>.</p>
+    </section>
+
+    <section class="interactive-section">
+        <h2>Leer Mij Beter Kennen</h2>
+        <p>Hier is iets leuks! Zweef met je muis over de vakken hieronder om wat meer over mij te leren:</p>
+        <div class="interactive-grid">
+            <div class="grid-item" title="Ik houd van fotografie en wandelen!">Leuk Weetje #1</div>
+            <div class="grid-item" title="Ik geniet van programmeeruitdagingen en het oplossen van puzzels!">Leuk Weetje #2</div>
+            <div class="grid-item" title="Mijn favoriete keuken is Italiaans.">Leuk Weetje #3</div>
+            <div class="grid-item" title="Ik ben een grote fan van sci-fi films en boeken.">Leuk Weetje #4</div>
+        </div>
+    </section>
+
+    <section class="extra-section">
+        <h2>Mijn Droom</h2>
+        <p>Mijn droom is om ooit een wereldwijde impact te maken met mijn werk, en anderen te inspireren hun passies te volgen.</p>
+    </section>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #002B5C; /* Donkerblauwe achtergrond */
+        color: #FFFFFF; /* Witte tekst voor goed contrast */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .about-me-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+
+    .main-heading {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.5rem;
+        color: #87CEEB; /* Lichtblauw voor onderkop */
+    }
+
+    .profile-img {
+        border-radius: 50%;
+        margin-top: 1rem;
+    }
+
+    .bio-section, .skills-section, .contact-section {
+        margin: 2rem 0;
+    }
+
+    .skills-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .skills-list li {
+        background-color: #004080; /* Een tint tussen donker en lichtblauw */
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-radius: 8px;
+    }
+
+    .interactive-section {
+        margin-top: 3rem;
+    }
+
+    .interactive-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .grid-item {
+        background-color: #004080;
+        color: #FFFFFF;
+        padding: 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .grid-item:hover {
+        background-color: #0059B3; /* Iets lichter bij hover */
+    }
+
+    .extra-section {
+        margin-top: 3rem;
+        padding: 2rem;
+        background-color: #004080;
+        border-radius: 8px;
+    }
+</style>
+{% endblock %}
