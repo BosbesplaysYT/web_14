@@ -1,57 +1,3 @@
-/* Base styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #181818de; /* Slightly lighter */
-    color: #e0e0e0;
-}
-
-/* Header styling */
-header {
-    background-color: #1f1f1f;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-nav a {
-    color: #bbb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* Main content styling */
-main {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Footer styling */
-footer {
-    background-color: #1f1f1f;
-    color: #bbb;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-}
-
-h2, h3 {
-    color: #e0e0e0;
-    text-align: center;
-}
-
 /* Flash message styles */
 .flash-messages {
     max-width: 600px;
@@ -87,6 +33,92 @@ h2, h3 {
     color: white;
     cursor: pointer;
     font-size: 1.2rem;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818de; /* Slightly lighter */
+    color: #e0e0e0;
+}
+
+/* Header styling */
+header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #333;
+}
+
+/* Active state for login button */
+nav a.login-btn {
+    background-color: #79b8ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a.login-btn:hover {
+    background-color: #0059B3;
+}
+
+/* Active state for signup button */
+nav a.signup-btn {
+    background-color: #4caf50; /* Different color for signup */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a.signup-btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1f1f1f;
+    color: #bbb;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+h2, h3 {
+    color: #e0e0e0;
+    text-align: center;
 }
 
 /* Post preview boxes */
@@ -166,12 +198,6 @@ form button:hover {
     background-color: #555;
 }
 
-/* Post content (markdown converted HTML) */
-.post-content p {
-    line-height: 1.6;
-    color: #e0e0e0;
-}
-
 /* Specific login form styling */
 .login-form {
     width: 300px;
@@ -189,33 +215,28 @@ form button:hover {
 }
 
 .login-form button {
-    width: 107%;
+    width: 100%; /* Make button fill the width */
     padding: 10px;
 }
 
-/* Adjusting h2 for login page */
-.login-form + h2 {
-    margin-bottom: 20px;
+/* Specific signup form styling */
+.signup-form {
+    width: 300px; /* Same width as login */
+    margin: 0 auto;
+    background-color: #222;
+    padding: 50px;
+    border-radius: 10px;
     text-align: center;
 }
 
-/* Blog post form (Admin Page) */
-.post-form {
-    width: 100%;
-    background-color: #1c1c1c;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.post-form input, .post-form textarea {
+.signup-form input {
     width: 100%;
     margin-bottom: 15px;
     padding: 10px;
-    border-radius: 5px;
 }
 
-.post-form button {
-    width: 100px;
+.signup-form button {
+    width: 100%; /* Make button fill the width */
     padding: 10px;
 }
 
@@ -348,202 +369,26 @@ form button:hover {
     cursor: pointer;
     text-align: center;
     width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
-    font-size: 1.1rem;
-    font-weight: bold;
-    letter-spacing: 0.05rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.about-me-container .grid-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.about-me-container .grid-item:hover::before {
-    opacity: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .about-me-container .grid-item:hover {
-    transform: translateY(-10px); /* Lift the box slightly */
-    background-color: #0059B3; /* Lighter blue on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.about-me-container .grid-item p {
-    margin: 0;
-    z-index: 2;
-    position: relative;
-}
-
-/* Optional: Add hover animations to text inside the grid item */
-.about-me-container .grid-item:hover p {
-    color: #FFD700; /* Gold color text on hover */
-    transition: color 0.3s ease;
-}
-
-/* Contact Section */
-.about-me-container .contact-section h3 {
-    font-size: 2rem;
-    color: #e0e0e0;
-    margin-bottom: 1rem;
-}
-
-.about-me-container .contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.about-me-container .contact-section form input,
-.about-me-container .contact-section form textarea {
-    width: 100%;
-    background-color: #222;
-    color: white;
-    border: 1px solid #444;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-}
-
-.about-me-container .contact-section form input:focus,
-.about-me-container .contact-section form textarea:focus {
-    outline: none;
-    border-color: #79b8ff;
-}
-
-.about-me-container .contact-section form button {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.about-me-container .contact-section form button:hover {
-    background-color: #555;
-}
-
-/* Styles for nav links in header */
-nav a {
-    color: #bbb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    color: white;
-    background-color: #333;
-}
-
-/* Active state for login and signup buttons */
-nav a.login-btn, nav a.signup-btn {
-    background-color: #79b8ff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease;
-}
-
-nav a.login-btn:hover, nav a.signup-btn:hover {
-    background-color: #0059B3;
-    color: white;
-}
-
-/* Mobile responsive styles */
-@media only screen and (max-width: 768px) {
-    /* General layout adjustments */
-    body {
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
+/* Responsive Styles */
+@media (max-width: 768px) {
     nav a {
-        font-size: 1rem;
-        margin: 0 10px;
+        display: block;
+        margin: 5px 0;
     }
 
-    main {
-        padding: 10px;
-    }
-
-    footer {
-        padding: 10px 0;
-    }
-
-    /* Adjust flash message font size */
-    .flash-message {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    /* Post previews: reduce padding and margin */
     .post-preview {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-
-    /* Form adjustments */
-    form input, form textarea {
-        padding: 8px;
-        margin-top: 8px;
-    }
-
-    /* Login form specific */
-    .login-form {
-        width: 100%;
-        padding: 30px;
-    }
-
-    .login-form button {
-        width: 100%;
-    }
-
-    /* Comment section styling */
-    .comments-section {
-        padding: 15px;
-    }
-
-    .comment {
-        padding: 8px;
-    }
-
-    /* About me page responsiveness */
-    .about-me-container {
-        padding: 1.5rem;
-    }
-
-    .about-me-container .main-heading {
-        font-size: 2rem;
-    }
-
-    .about-me-container .sub-heading {
-        font-size: 1.2rem;
+        max-height: none; /* Remove height restriction on smaller screens */
     }
 
     .about-me-container .interactive-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
     }
 }
