@@ -1,46 +1,9 @@
-/* Flash message styles */
-.flash-messages {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.flash-message {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    position: relative;
-    text-align: center;
-    font-size: 1rem;
-}
-
-/* Category-specific flash message styles */
-.flash-message.success {
-    background-color: #4caf50;
-    color: white;
-}
-
-.flash-message.error {
-    background-color: #f44336;
-    color: white;
-}
-
-.flash-message .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-
 /* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: #181818de; /* Slightly lighter */
     color: #e0e0e0;
 }
 
@@ -87,6 +50,43 @@ footer {
 h2, h3 {
     color: #e0e0e0;
     text-align: center;
+}
+
+/* Flash message styles */
+.flash-messages {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.flash-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Category-specific flash message styles */
+.flash-message.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.flash-message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.flash-message .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
 /* Post preview boxes */
@@ -217,6 +217,41 @@ form button:hover {
 .post-form button {
     width: 100px;
     padding: 10px;
+}
+
+/* Post content (markdown converted HTML) */
+.post-content p {
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Comment section styles */
+.comments-section {
+    background-color: #2a2a2a; /* Lighter background for comments */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #333; /* Slightly lighter than the main post */
+    border-left: 5px solid #0059B3; /* Reference color */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.comment:hover {
+    background-color: #444; /* Darker on hover */
+}
+
+.comment p {
+    margin: 5px 0; /* Spacing for readability */
+}
+
+.comment p strong {
+    color: #79b8ff; /* Lighter color for usernames */
 }
 
 /* About Me Page Specific Styles */
@@ -401,4 +436,114 @@ form button:hover {
 
 .about-me-container .contact-section form button:hover {
     background-color: #555;
+}
+
+/* Styles for nav links in header */
+nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #333;
+}
+
+/* Active state for login and signup buttons */
+nav a.login-btn, nav a.signup-btn {
+    background-color: #79b8ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a.login-btn:hover, nav a.signup-btn:hover {
+    background-color: #0059B3;
+    color: white;
+}
+
+/* Mobile responsive styles */
+@media only screen and (max-width: 768px) {
+    /* General layout adjustments */
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    /* Adjust flash message font size */
+    .flash-message {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Post previews: reduce padding and margin */
+    .post-preview {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Form adjustments */
+    form input, form textarea {
+        padding: 8px;
+        margin-top: 8px;
+    }
+
+    /* Login form specific */
+    .login-form {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .login-form button {
+        width: 100%;
+    }
+
+    /* Comment section styling */
+    .comments-section {
+        padding: 15px;
+    }
+
+    .comment {
+        padding: 8px;
+    }
+
+    /* About me page responsiveness */
+    .about-me-container {
+        padding: 1.5rem;
+    }
+
+    .about-me-container .main-heading {
+        font-size: 2rem;
+    }
+
+    .about-me-container .sub-heading {
+        font-size: 1.2rem;
+    }
+
+    .about-me-container .interactive-grid {
+        grid-template-columns: 1fr;
+    }
 }
