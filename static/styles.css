@@ -215,7 +215,7 @@ form button:hover {
 }
 
 .login-form button {
-    width: 100%; /* Make button fill the width */
+    width: 107%; /* Make button fill the width */
     padding: 10px;
 }
 
