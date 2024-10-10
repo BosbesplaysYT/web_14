@@ -298,7 +298,8 @@ def index():
 # About page
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    flash("Deze pagina is nog onder constructie! Kom later terug!")
+    abort(404)
 
 # Contact page
 @app.route('/contact')
