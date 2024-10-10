@@ -56,7 +56,7 @@ def admin_required(f):
     return decorated_function
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     return render_template("404.html"), 404
 
 # Route to sign up a new user
@@ -302,7 +302,7 @@ def index():
 # About page
 @app.route('/about')
 def about():
-    flash("Deze pagina is nog onder constructie! Kom later terug!")
+    flash("Deze pagina is nog onder constructie! Kom later terug!", "error")
     abort(404)
 
 # Contact page
