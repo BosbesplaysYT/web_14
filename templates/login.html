@@ -5,10 +5,10 @@
 {% block content %}
     <h2>Login</h2>
     <form class="login-form" method="POST" action="{{ url_for('login') }}">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="username" placeholder="Gebruikersnaam" required>
+        <input type="password" name="password" placeholder="Wachtwoord" required>
         <button type="submit">Login</button>
     </form>
 
-    <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></p>
+    <p>Geen account? <a href="{{ url_for('signup') }}">Meld je hier aan</a></p>
 {% endblock %}

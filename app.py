@@ -23,7 +23,7 @@ def load_users():
         return {}
     with open(USERS_FILE, 'r') as f:
         return json.load(f)
-    
+
 def load_comments_for_post(post_id):
     comments = []
     users = load_users()  # Assuming you have a function to load users from users.json
@@ -283,13 +283,13 @@ def delete_post(post_id):
             if 'comments' in user_data:
                 # Filter out comments associated with the deleted post
                 user_data['comments'] = [comment for comment in user_data['comments'] if comment['post_id'] != post_id]
-        
+
         # Save the updated users data back to the users.json file
         save_users(users)
 
     except FileNotFoundError:
         flash('Post not found!', 'error')
-    
+
     return redirect(url_for('admin'))
 
 

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Tech Blog{% endblock %}</title>
+    <title>{% block title %}Bosbes Blog{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Tech Blog</h1>
+        <h1>Welkom bij Bosbes Blog!</h1>
         <nav>
-            <a href="{{ url_for('index') }}">Home</a> 
-            <a href="{{ url_for('about') }}">About me</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">Over mij</a>
             {% if 'logged_in' in session %}
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="{{ url_for('logout') }}">Uitloggen</a>
             {% else %}
                 <a href="{{ url_for('login') }}">Login</a>
-                <a href="{{ url_for('signup') }}">Sign Up</a> <!-- Added Sign Up link -->
+                <a href="{{ url_for('signup') }}">Aanmelden</a> <!-- Added Sign Up link -->
             {% endif %}
         </nav>
     </header>
@@ -40,7 +40,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 My Tech Blog</p>
+        <p>&copy; 2024 Bosbes Blog</p>
     </footer>
 </body>
 </html>

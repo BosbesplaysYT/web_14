@@ -4,42 +4,42 @@
 
 {% block content %}
     <h2>{{ post.title }}</h2>
-    <p><strong>Date:</strong> {{ post.date }}</p>
+    <p><strong>Datum:</strong> {{ post.date }}</p>
     <div class="post-content">{{ post.content|safe }}</div>
-    
+
     <hr>
-    
+
     <!-- Comment section -->
-    <h3>Comments on "{{ post.title }}"</h3> <!-- Link to the post title -->
-        
+    <h3>Reacties op "{{ post.title }}"</h3> <!-- Link to the post title -->
+
     {% if comments %}
         <div class="comments-section">
             {% for comment in comments %}
                 <div class="comment">
-                    <p><strong>{{ comment.username }}</strong> said:</p>
+                    <p><strong>{{ comment.username }}</strong> zegt:</p>
                     <p>{{ comment.content }}</p>
                     <p><small>{{ comment.timestamp }}</small></p>
                 </div>
             {% endfor %}
         </div>
     {% else %}
-        <p>No comments yet. Be the first to comment!</p>
+        <p>Nog geen reacties. Wees de eerste!</p>
     {% endif %}
 
-    
+
     <hr>
     <!-- Add comment form (only if logged in) -->
     {% if session.logged_in %}
-        <h4>Add a Comment</h4>
+        <h4>Reactie:</h4>
         <form method="POST" action="{{ url_for('view_post', post_id=post.id) }}">
-            <textarea name="comment" placeholder="Write your comment here..." required></textarea>
+            <textarea name="comment" placeholder="Schrijf hier je reactie..." required></textarea>
             <br>
-            <button type="submit">Submit Comment</button>
+            <button type="submit">Reageer</button>
         </form>
     {% else %}
-        <p>You must be <a href="{{ url_for('login') }}">logged in</a> to comment.</p>
+        <p>Je moet <a href="{{ url_for('login') }}">Ingelogd</a> zijn om te reageren.</p>
     {% endif %}
-    
+
     <br>
-    <button class="back-button" onclick="window.location.href='{{ url_for('index') }}';">Back to Blog Posts</button>
+    <button class="back-button" onclick="window.location.href='{{ url_for('index') }}';">Terug naar de blog posts</button>
 {% endblock %}

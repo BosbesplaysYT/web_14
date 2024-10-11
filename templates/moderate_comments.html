@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Moderate Comments - My Tech Blog{% endblock %}
+{% block title %}Comments beheren - Bosbes Blog{% endblock %}
 
 {% block content %}
-<h2>Moderate Comments</h2>
+<h2>Beheer Comments</h2>
 
 {% if comments %}
     <ul>
@@ -15,12 +15,12 @@
                     <input type="hidden" name="username" value="{{ comment.username }}">
                     <input type="hidden" name="post_id" value="{{ comment.post_id }}">
                     <input type="hidden" name="content" value="{{ comment.content }}">
-                    <button type="submit" onclick="return confirm('Are you sure you want to delete this comment?');">Delete Comment</button>
+                    <button type="submit" onclick="return confirm('Weet je zeker dat je deze comment wil verwijderen?');">Comment verwijderen</button>
                 </form>
             </li>
         {% endfor %}
     </ul>
 {% else %}
-    <p>No comments to moderate.</p>
+    <p>Nog geen comments.</p>
 {% endif %}
 {% endblock %}

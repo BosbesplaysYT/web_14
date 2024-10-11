@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Post{% endblock %}
+
+{% block content %}
+    <h2>Create a New Post</h2>
+    <form class="post-form" method="POST" action="{{ url_for('create_post') }}">
+        <label for="title">Post Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Post Content (Markdown):</label>
+        <textarea id="content" name="content" rows="10" required></textarea>
+
+        <button type="submit">Create Post</button>
+    </form>
+{% endblock %}
